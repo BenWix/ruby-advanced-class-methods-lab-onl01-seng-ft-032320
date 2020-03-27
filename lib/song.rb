@@ -40,6 +40,20 @@ class Song
     self.all.sort_by{|song| song.name}.uniq 
   end
 
+  def self.new_from_filename(file_name)
+    parsed_file = file_name.split(/[-.]/).chomp 
+    name = 
+    
+  end 
+  
+  def self.create_from_filename
+    
+  end 
+  
+  def self.destroy_all
+    self.all.clear
+  end 
+  
   def self.all
     @@all
   end
