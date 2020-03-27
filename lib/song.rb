@@ -16,12 +16,17 @@ class Song
   end 
   
   def self.create_by_name(name)
-    song = self.new 
+    #How is this supposed to be different from .new_by_name
+    song = self.create 
     song.name = name 
     song.save
     song 
     #self.all.find{|i| i == name}
   end 
+  
+  def self.find_by_name(name)
+    
+  end
 
   def self.all
     @@all
