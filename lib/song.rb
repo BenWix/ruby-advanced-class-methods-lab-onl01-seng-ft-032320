@@ -27,6 +27,14 @@ class Song
   def self.find_by_name(name)
     self.all.find{|i| i.name == name}
   end
+  
+  def self.find_or_create_by_name(name)
+    make = true 
+    self.all.each do |song|
+      make = false if song.name == name
+    end 
+    make ? self.create_by_name(name) : self.find_by_name(name)
+  end 
 
   def self.all
     @@all
