@@ -16,7 +16,11 @@ class Song
   end 
   
   def self.create_by_name(name)
-    self.all.find{|i| i == name}
+    song = self.new 
+    song.name = name 
+    song.save
+    song 
+    #self.all.find{|i| i == name}
   end 
 
   def self.all
