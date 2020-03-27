@@ -41,9 +41,14 @@ class Song
   end
 
   def self.new_from_filename(file_name)
-    parsed_file = file_name.split(/[-.]/).chomp 
-    name = 
-    
+    parsed_file = file_name.split(/[-.]/)
+    artist = parsed_file[0].chomp
+    name = parsed_file[1].strip
+    song = self.create 
+    song.name = name 
+    song.artist_name = artist 
+    song.save
+    song 
   end 
   
   def self.create_from_filename
