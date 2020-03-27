@@ -3,6 +3,7 @@ class Song
   @@all = []
 
   def self.create
+    Self.new  
     save
     
   end 
