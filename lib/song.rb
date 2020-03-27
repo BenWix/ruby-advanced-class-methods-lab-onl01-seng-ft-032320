@@ -34,13 +34,11 @@ class Song
     else 
       self.find_by_name(name)
     end 
-  
-    # make = true 
-    # self.all.each do |song|
-    #   make = false if song.name == name
-    # end 
-    # make ? self.create_by_name(name) : self.find_by_name(name)
   end 
+  
+  def self.alphabetical
+    self.all.sort_by
+  end
 
   def self.all
     @@all
